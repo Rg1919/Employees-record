@@ -1,0 +1,29 @@
+To retrieve all employee records:
+SELECT * FROM employees;
+
+To retrieve employee records for a specific location:
+SELECT * FROM employees WHERE location_city = 'Cleveland';
+
+To retrieve all active employees:
+SELECT * FROM employees WHERE termdate IS NULL;
+
+To replace '/' with '-' in date columns:
+UPDATE Employees SET hire_date = REPLACE(hire_date, '/', '-');
+UPDATE Employees SET birthdate = REPLACE(birthdate, '/', '-');
+
+To convert the existing date format of "MM/DD/YYYY" to "YYYY-MM-DD":
+UPDATE Employees SET birthdate = DATE_FORMAT(STR_TO_DATE(birthdate, '%m/%d/%Y'), '%Y-%m-%d');
+UPDATE Employees SET hire_date = DATE_FORMAT(STR_TO_DATE(hire_date, '%m/%d/%Y'), '%Y-%m-%d');
+
+To change the empty values to 'NULL':
+UPDATE Employees SET termdate = NULL WHERE termdate = '';
+
+To replace any occurrence of the string 'OR' with '/' in race column:
+UPDATE Employees SET race = REPLACE(race, 'OR', '/');
+
+To retrieve a list of distinct values in the "department" column from the "Employees" table:
+SELECT DISTINCT(department) FROM Employees;
+
+To change a column name in the table:
+ALTER TABLE Employees CHANGE jobtitle Title varchar(50);
+
