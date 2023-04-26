@@ -20,7 +20,7 @@ location: Location where the employee works
 
 hire_date: Date when the employee was hired
 
-termdate: Date when the employee left the company (if applicable)
+termdate: Date when the employee left the company 
 
 location_city: City where the employee's workplace is located
 
